@@ -1,0 +1,24 @@
+{
+  "type": {
+    "int": "Please enter an integer value.",
+    "uint": "Please enter a positive integer value."
+  },
+  "minimum": "Please enter a value greater than or equal to {0}.",
+  "maximum": "Please enter a value less than or equal to {0}.",
+  "exclusiveMinimum": "Please enter a value greater than {0}.",
+  "exclusiveMaximum": "Please enter a value less than {0}.",
+  "multipleOf": "Please enter a value that is divisible by {0}.",
+  "minLength": "Please enter a value with a minimum length of {0} characters.",
+  "maxLength": "Please enter a value with a maximum length of {0} characters.",
+  "pattern": "Please enter a value in the correct format.",
+  "format": {
+    "email": "Please enter an email address.",
+    "uuid": "Please enter a UUID.",
+    "ipv4": "Please enter an IPv4 address.",
+    "ipv6": "Please enter an IPv6 address.",
+    "date": "Please enter a date.",
+    "date-time": "Please enter a date and time."
+  },
+  "minItems": "Please enter at least {0} items.",
+  "maxItems": "You can enter up to {0} items."
+}
