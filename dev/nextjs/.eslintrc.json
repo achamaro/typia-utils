@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "plugins": ["react-refresh", "simple-import-sort", "unused-imports"],
+  "rules": {
+    "simple-import-sort/imports": "warn",
+    "unused-imports/no-unused-imports": "warn",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off"
+  }
+}
