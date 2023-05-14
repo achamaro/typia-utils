@@ -30,10 +30,15 @@
       "import": "./dist/webpack.js",
       "require": "./dist/webpack.cjs"
     },
-    "./react/error-message": {
-      "types": "./dist/react/error-message.d.ts",
-      "import": "./dist/react/error-message.js",
-      "require": "./dist/react/error-message.cjs"
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js",
+      "require": "./dist/react.cjs"
+    },
+    "./react-hook-form": {
+      "types": "./dist/react-hook-form.d.ts",
+      "import": "./dist/react-hook-form.js",
+      "require": "./dist/react-hook-form.cjs"
     },
     "./message/*": "./dist/message/*"
   },

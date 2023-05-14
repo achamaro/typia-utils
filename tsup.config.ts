@@ -5,7 +5,8 @@ export default defineConfig({
     "src/index.ts",
     "src/webpack.ts",
     "src/webpack-loader.ts",
-    "src/react/error-message.tsx",
+    "src/react-hook-form.ts",
+    "src/react.ts",
   ],
   format: ["cjs", "esm"],
   dts: {

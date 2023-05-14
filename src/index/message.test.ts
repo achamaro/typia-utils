@@ -1,4 +1,4 @@
-import ja from "../public/message/ja.json";
+import ja from "../../public/message/ja.json";
 import { createDeriver } from "./message";
 
 describe("message", () => {
