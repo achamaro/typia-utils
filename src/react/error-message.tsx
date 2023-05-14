@@ -1,16 +1,15 @@
+import { getDeriver } from "@achamaro/typia-utils";
+import { useMemo } from "react";
 import { IValidation } from "typia";
-
-export const messages = new Map<
-  string,
-  (error: IValidation.IError) => string | undefined
->();
 
 export type ErrorMessageProps = {
   error: IValidation.IError;
   locale?: string;
 };
 export function ErrorMessage({ error, locale }: ErrorMessageProps) {
-  const message = messages.get(locale ?? "") ?? messages.values().next().value;
+  const deriveMessage = useMemo(() => {
+    return getDeriver(locale);
+  }, [locale]);
 
-  return <>{message(error)}</>;
+  return <>{deriveMessage(error)}</>;
 }

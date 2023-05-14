@@ -1,18 +1,18 @@
 import "@testing-library/jest-dom";
 
+import { createDeriver, setDeriver } from "@achamaro/typia-utils";
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach } from "vitest";
 
 import en from "../../public/message/en.json";
 import ja from "../../public/message/ja.json";
-import { message } from "..";
-import { ErrorMessage, messages } from "./error-message";
+import { ErrorMessage } from "./error-message";
 
 afterEach(cleanup);
 
 describe("error-message", () => {
-  messages.set("ja", message(ja));
-  messages.set("en", message(en));
+  setDeriver("ja", createDeriver(ja));
+  setDeriver("en", createDeriver(en));
 
   it("ja", () => {
     const error = {

@@ -1,8 +1,8 @@
 import ja from "../public/message/ja.json";
-import { message } from "./message";
+import { createDeriver } from "./message";
 
 describe("message", () => {
-  const msg = message(ja);
+  const msg = createDeriver(ja);
 
   it("number (@type int)", () => {
     const error = {

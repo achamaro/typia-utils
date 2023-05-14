@@ -1,9 +1,25 @@
 import { IValidation } from "typia";
 
 export type Messages = { [key: string]: string | Messages };
-export type MessageFunc = (error: IValidation.IError) => string | undefined;
+export type MessageDeriver = (error: IValidation.IError) => string | undefined;
 
-export function message(messages: Messages): MessageFunc {
+const derivers = new Map<string, MessageDeriver>();
+
+export function setDeriver(locale: string, deriver: MessageDeriver): void {
+  derivers.set(locale, deriver);
+}
+
+export function getDeriver(locale?: string): MessageDeriver {
+  // 指定のロケール、または先頭のロケール
+  const deriver = derivers.get(locale ?? "") ?? derivers.values().next().value;
+  if (!deriver) {
+    throw new Error(`Message deriver not found`);
+  }
+
+  return deriver;
+}
+
+export function createDeriver(messages: Messages): MessageDeriver {
   return (error: IValidation.IError) => {
     const { expected, value } = error;
 
